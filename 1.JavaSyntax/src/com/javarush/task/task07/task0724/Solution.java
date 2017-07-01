@@ -9,7 +9,7 @@ public class Solution {
         Human ded1 = new Human("васfилий",true,80);
         Human ded2 = new Human("петя",true,80);
         Human bab2 = new Human("надя",false,75);
-        Human bab1 = new Human("надя2",false,75);
+        Human bab1 = new Human("наfдя2",false,75);
         Human mam = new Human("вера",false,50,ded1,bab1);
         Human pap = new Human("костя",false,50,ded2,bab2);
         Human reb1 = new Human("костя1",false,20,pap,mam);
