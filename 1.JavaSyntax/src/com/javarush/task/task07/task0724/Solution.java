@@ -6,7 +6,7 @@ package com.javarush.task.task07.task0724;
 
 public class Solution {
     public static void main(String[] args) {
-        Human ded1 = new Human("василий",true,80);
+        Human ded1 = new Human("васfилий",true,80);
         Human ded2 = new Human("петя",true,80);
         Human bab2 = new Human("надя",false,75);
         Human bab1 = new Human("надя2",false,75);
