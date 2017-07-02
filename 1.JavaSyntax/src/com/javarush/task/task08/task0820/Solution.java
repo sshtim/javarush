@@ -1,7 +1,6 @@
 package com.javarush.task.task08.task0820;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /* 
 Множество всех животных
@@ -20,30 +19,69 @@ public class Solution {
     }
 
     public static Set<Cat> createCats() {
-        HashSet<Cat> result = new HashSet<Cat>();
-
-        //напишите тут ваш код
-
-        return result;
+        HashSet<Cat> set_cats = new HashSet<Cat>();
+        set_cats.add(new Cat("Мурзик"));
+        set_cats.add(new Cat("Мурка"));
+        set_cats.add(new Cat("Аркаша"));
+        set_cats.add(new Cat("Киса"));
+        return set_cats;
     }
 
     public static Set<Dog> createDogs() {
-        //напишите тут ваш код
-        return null;
+        HashSet<Dog> set_dogs = new HashSet<Dog>();
+        set_dogs.add(new Dog("Шарик"));
+        set_dogs.add(new Dog("Барсик"));
+        set_dogs.add(new Dog("Рекс"));
+        return set_dogs;
     }
 
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs) {
-        //напишите тут ваш код
-        return null;
+        HashSet<Object> result = new HashSet<Object>();
+        result.addAll(cats);
+        result.addAll(dogs);
+        return result;
     }
 
     public static void removeCats(Set<Object> pets, Set<Cat> cats) {
-        //напишите тут ваш код
+        pets.removeAll(cats);
     }
-
     public static void printPets(Set<Object> pets) {
-        //напишите тут ваш код
+        for (Object pet : pets) {
+            System.out.println(pet);
+        }
     }
 
-    //напишите тут ваш код
+    public static class Cat{
+        private String name;
+        public Cat(String name){
+            this.name=name;
+        }
+        public String getName(){
+            return this.name;
+        }
+        public void setName(String name){
+            this.name=name;
+        }
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    public static class Dog{
+        private String name;
+        public Dog(String name){
+            this.name = name;
+        }
+        public String getName(){
+            return this.name;
+        }
+        public void setName(String name){
+            this.name = name;
+        }
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
 }
