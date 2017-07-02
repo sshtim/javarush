@@ -1,5 +1,6 @@
 package com.javarush.task.task08.task0817;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,14 +22,22 @@ public class Solution {
         map.put("Ди4льмerиев","Тимур");
         map.put("Дильмwиев","Тимуreр");
         return map;
-
     }
 
     public static void removeTheFirstNameDuplicates(HashMap<String, String> map) {
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            entry.getValue();
+        ArrayList<String> values = new ArrayList<>();
+        ArrayList<String> duplicates_values = new ArrayList<>();
+        for(Map.Entry<String,String> entry:map.entrySet()){
+            if(values.contains(entry.getValue())){
+                duplicates_values.add(entry.getValue());
+            }
+            else {
+                values.add(entry.getValue());
+            }
         }
-
+        for(String name:duplicates_values){
+            removeItemFromMapByValue(map,name);
+        }
     }
 
     public static void removeItemFromMapByValue(HashMap<String, String> map, String value) {
@@ -40,6 +49,14 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
+        /*HashMap<String,String> map = createMap();
+        for(Map.Entry<String,String> entry: map.entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+        removeTheFirstNameDuplicates(map);
+        System.out.println("+========================");
+        for(Map.Entry<String,String> entry: map.entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }*/
     }
 }

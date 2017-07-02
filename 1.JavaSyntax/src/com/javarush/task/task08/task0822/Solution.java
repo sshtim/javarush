@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /* 
@@ -18,12 +17,24 @@ public class Solution {
     }
 
     public static int getMinimum(List<Integer> array) {
-        // find minimum here — найти минимум тут
-        return 0;
+        Integer min = array.get(0);
+        for(int i=0;i<array.size();i++){
+            if(array.get(i)<min){
+                min = array.get(i);
+            }
+        }
+        return min;
     }
 
     public static List<Integer> getIntegerList() throws IOException {
-        //create and initialize a list here - создать и заполнить список тут
-        return null;
+        List<Integer> list = new ArrayList<>();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int number = Integer.parseInt(reader.readLine());
+        for(int i=0;i<number;i++){
+            list.add(Integer.parseInt(reader.readLine()));
+        }
+        reader.close();
+        return list;
     }
 }
