@@ -22,12 +22,12 @@ public class Solution {
         String line = reader.readLine();
         if(line.equals(Planet.EARTH)){
             thePlanet= Earth.getInstance();
-        }
-        if(line.equals(Planet.SUN)){
+        }else if(line.equals(Planet.SUN)){
             thePlanet= Sun.getInstance();
-        }
-        if(line.equals(Planet.MOON)){
+        }else if(line.equals(Planet.MOON)){
             thePlanet= Moon.getInstance();
+        }else {
+            thePlanet =null;
         }
     }
 }
