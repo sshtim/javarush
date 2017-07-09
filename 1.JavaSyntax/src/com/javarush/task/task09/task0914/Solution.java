@@ -6,11 +6,19 @@ package com.javarush.task.task09.task0914;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        try {
 
-        method1();
-
-        //напишите тут ваш код
+            method1();
+        }
+        catch (Exception3 e){
+            System.out.println(e);
+        }
+        catch (Exception2 e){
+            System.out.println(e);
+        }
+        catch (Exception1 e){
+            System.out.println(e);
+        }
 
     }
 
