@@ -1,19 +1,18 @@
 package com.javarush.task.task17.task1707;
 
 
-import java.io.BufferedReader;
-
 public class IMF {
 
-    private static IMF imf1;
+    private static IMF imf ;
 
     public static IMF getFund() {
-        //add your code here - добавь код тут
-        return imf1;
+       synchronized (IMF.class) {
+           if(imf==null)
+               imf = new IMF();
+       }
+        return imf;
     }
-
 
     private IMF() {
     }
-
 }
