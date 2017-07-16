@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 Общий список
 */
 
-public class Solution{
+public class Solution {
     private static  ArrayList<Long> original = new ArrayList<Long>();
 
     public static void main(String[] args) {
