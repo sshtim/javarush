@@ -10,10 +10,11 @@ import java.util.ArrayList;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String URL = reader.readLine();
-        ArrayList<String> arrayList=new ArrayList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
+    }
 
 
     public static void alert(double value) {

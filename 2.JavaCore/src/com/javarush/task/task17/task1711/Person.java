@@ -1,9 +1,6 @@
-package com.javarush.task.task17.task1710;
+package com.javarush.task.task17.task1711;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class Person {
     private String name;
@@ -46,13 +43,5 @@ public class Person {
 
     public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
-    }
-
-    @Override
-    public String toString() {
-        DateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
-        if(this.sex==Sex.MALE)
-            return this.name +" м " + df.format(this.birthDay);
-        else return this.name +" ж " + df.format(this.birthDay);
     }
 }
