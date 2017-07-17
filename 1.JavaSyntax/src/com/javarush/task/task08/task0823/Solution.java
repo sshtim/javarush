@@ -11,8 +11,18 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = reader.readLine();
+        String line = reader.readLine();
 
-        //напишите тут ваш код
+        char[] ch = line.toCharArray();
+
+        if(Character.isLetter(ch[0])) {
+            ch[0] = Character.toUpperCase(ch[0]);
+        }
+        for(int i=0;i<ch.length-1;i++){
+            if(ch[i]==' ' & Character.isLetter(ch[i+1])){
+                ch[i+1] = Character.toUpperCase(ch[i+1]);
+            }
+        }
+        System.out.println(ch);
     }
 }
