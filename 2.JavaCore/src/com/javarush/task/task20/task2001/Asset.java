@@ -1,5 +1,7 @@
 package com.javarush.task.task20.task2001;
 
+import java.io.*;
+
 public class Asset {
     public Asset(String name) {
         this.name = name;
@@ -41,4 +43,6 @@ public class Asset {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
+
 }

@@ -24,6 +24,10 @@ public class Solution {
             Human somePerson = new Human();
             somePerson.load(inputStream);
             //check here that ivanov equals to somePerson - проверьте тут, что ivanov и somePerson равны
+            if(somePerson.equals(ivanov))
+                System.out.println("ivanov equals to somePerson");
+                else System.out.println("ivanov not equals to somePerson");
+
             inputStream.close();
 
         } catch (IOException e) {
@@ -70,11 +74,28 @@ public class Solution {
         }
 
         public void save(OutputStream outputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            PrintWriter printWriter = new PrintWriter(outputStream);
+            printWriter.println(name);
+
+
+            for (Asset asset : assets) {
+                printWriter.println(asset.getName() + ","+asset.getPrice());
+            }
+
+            printWriter.flush();
+
         }
 
         public void load(InputStream inputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            if(reader.ready())
+                name = reader.readLine();
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] asset = line.split(",");
+                assets.add(new Asset(asset[0]));
+            }
+
         }
     }
 }
