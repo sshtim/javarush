@@ -22,12 +22,12 @@ public class Solution {
     }
 
     public static void print(byte[] bytes) {
-        for(int i=0;i<bytes.length;i++){
-            System.out.print(bytes[i]);
-            if(i%7==0 && i!=0)
-                System.out.print(" ");
-
-
+        for(byte a : bytes){
+            for (byte i = 7; i >= 0; i--) {
+                System.out.print((a & (1 << i)) != 0 ? 1 : 0);
+            }
+            System.out.print(" ");
         }
+        System.out.println();
     }
 }
