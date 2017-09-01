@@ -1,10 +1,10 @@
-package com.javarush.task.task21.task2105;
+package com.javarush.task.task21.task2104;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /* 
-Исправить ошибку. Сравнение объектов
+Equals and HashCode
 */
 public class Solution {
     private final String first, last;
@@ -13,13 +13,18 @@ public class Solution {
         this.first = first;
         this.last = last;
     }
-
+    //Метод equals должен проверять является ли переданный объект объектом класса Solution
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (o == null)
             return false;
+
+        if (!(o instanceof Solution)){
+            return false;
+        }
+
         if (this == o) return true;
-        if (!(o instanceof Solution)) return false;
 
         Solution solution = (Solution) o;
 
@@ -30,7 +35,8 @@ public class Solution {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int result = first != null ? first.hashCode() : 0;
         result = 31 * result + (last != null ? last.hashCode() : 0);
         return result;
@@ -38,7 +44,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Set<Solution> s = new HashSet<>();
-        s.add(new Solution("Mickey", "Mouse"));
-        System.out.println(s.contains(new Solution("Mickey", "Mouse")));
+        s.add(new Solution("Donald", "Duck"));
+        System.out.println(s.contains(new Solution("Donald", "Duck")));
     }
 }
